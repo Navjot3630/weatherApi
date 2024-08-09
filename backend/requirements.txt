@@ -1,6 +1,5 @@
 flask
 requests==2.28.2
-
+python-dotenv
 Flask==2.3.0
-# other dependencies if any
 flask_cors
