@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   frontend:
+    image: frontend_image
     build:
       context: ./frontend
     ports:
@@ -10,9 +11,14 @@ services:
       - backend
     networks:
       - app_network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
     container_name: frontend
 
   backend:
+    image: backend_image
     build:
       context: ./backend
     ports:
@@ -21,8 +27,12 @@ services:
       - FLASK_ENV=development
     networks:
       - app_network
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
     container_name: backend
 
 networks:
   app_network:
-    driver: bridge
+    driver: overlay
