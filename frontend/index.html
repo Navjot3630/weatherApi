@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="card shadow-lg rounded-4 border-light">
@@ -17,7 +19,8 @@
                 <h1 class="card-title text-center mb-4">Weather App</h1>
                 <form id="weather-form" class="d-flex justify-content-center mb-4">
                     <div class="input-group">
-                        <input type="text" id="city" class="form-control form-control-lg rounded-start" placeholder="Enter city" aria-label="City name" required>
+                        <input type="text" id="city" class="form-control form-control-lg rounded-start"
+                            placeholder="Enter city" aria-label="City name" required>
                         <button class="btn btn-primary btn-lg rounded-end" type="submit">Get Weather</button>
                     </div>
                 </form>
@@ -55,11 +58,11 @@
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script>
-        document.getElementById('weather-form').addEventListener('submit', function(e) {
+        document.getElementById('weather-form').addEventListener('submit', function (e) {
             e.preventDefault();
             const city = document.getElementById('city').value;
 
-            fetch(`http://localhost:5000/api/weather?city=${city}`)
+            fetch(`http://backend-service.backend.svc.cluster.local/api/weather?city=${city}`)
 
 
                 .then(response => {
@@ -88,4 +91,5 @@
         });
     </script>
 </body>
+
 </html>

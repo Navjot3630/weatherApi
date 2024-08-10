@@ -10,8 +10,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 load_dotenv()
 
 API_KEY = os.getenv('API_KEY')
-BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
-
+BASE_URL = os.getenv('API_ENDPOINT')
 @app.route('/api/weather', methods=['GET'])
 def get_weather():
     city = request.args.get('city')
