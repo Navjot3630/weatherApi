@@ -1,6 +1,6 @@
 image:
   repository: navjotrai/frontend_image
-  tag: latest8
+  tag: latest7
 
 service:
   type: ClusterIP
