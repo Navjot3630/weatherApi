@@ -8,8 +8,8 @@ spec:
 service:
   port: 5000
 
-api-endpoint:
+apiendpoint:
   API_URL : 'http://api.openweathermap.org/data/2.5/weather'  
 
-backend-config:
+configmap:
   name: my-api-config 
