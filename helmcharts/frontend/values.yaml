@@ -9,13 +9,5 @@ service:
 spec:
   replicas: 3 
 
-ingress:
-  enabled: true
-  hosts:
-    - host: frontend.example.com
-      paths:
-        - path: /
-          pathType: Prefix
-
 nginx:
   configMapName: nginx-config
