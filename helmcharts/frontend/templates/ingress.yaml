@@ -7,13 +7,17 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: {{ .Values.ingress.hosts.host | default "frontend.example.com" }} # Optional: Specify a hostname if using a custom domain
+    {{- range .Values.ingress.hosts }}
+    - host: {{ .host | default "frontend.example.com" }}
       http:
         paths:
-          - path: {{ .Values.ingress.paths.path | default "/" }}
-            pathType: {{ .Values.ingress.paths.pathType | default "Prefix" }}
+          {{- range .paths }}
+          - path: {{ .path | default "/" }}
+            pathType: {{ .pathType | default "Prefix" }}
             backend:
               service:
                 name: frontend-service
                 port:
                   number: 80
+          {{- end }}
+    {{- end }}
