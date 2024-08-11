@@ -12,4 +12,4 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
-  type: ClusterIP  # This can be LoadBalancer or NodePort depending on your needs
+  type: ClusterIP 
