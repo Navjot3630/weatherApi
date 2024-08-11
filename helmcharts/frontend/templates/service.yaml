@@ -10,4 +10,4 @@ spec:
     - protocol: TCP
       port: {{ .Values.service.port }}
       targetPort: 80
-type: ClusterIP      
+type: LoadBalancer      
