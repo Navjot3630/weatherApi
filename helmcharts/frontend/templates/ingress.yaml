@@ -14,7 +14,7 @@ spec:
           {{- range .paths }}
           - path: {{ .path | default "/" }}
             pathType: {{ .pathType | default "Prefix" }}
-            frontend:
+            backend:
               service:
                 name: frontend-service
                 port:
