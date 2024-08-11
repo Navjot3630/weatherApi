@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: frontend
   labels:
     app: frontend
 spec:
@@ -15,7 +16,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: navjotrai/frontend_image:latest
-        ports:
-        - containerPort: 80
+        - name: frontend
+          image: navjotrai/frontend_image:latest7
+          ports:
+            - containerPort: 80

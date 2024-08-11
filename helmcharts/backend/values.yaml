@@ -1,0 +1,15 @@
+image:
+  repository: navjotrai/backend_image
+  tag: latest
+
+spec:
+  replicas: 2
+
+service:
+  port: 5000
+
+api-endpoint:
+  API_URL : 'http://api.openweathermap.org/data/2.5/weather'  
+
+backend-config:
+  name: my-api-config 

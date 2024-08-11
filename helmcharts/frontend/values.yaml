@@ -1,0 +1,21 @@
+image:
+  repository: navjotrai/frontend_imagr
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+spec:
+  replicas: 2  
+
+ingress:
+  enabled: true
+  hosts:
+    - host: frontend.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+nginx:
+  configMapName: nginx-config

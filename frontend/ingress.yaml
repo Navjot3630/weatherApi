@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: frontend-ingress
+  name: my-ingress
+  namespace: frontend # Replace with your namespace
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: frontend.yourdomain.com
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix

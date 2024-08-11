@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
+  namespace: backend
   labels:
     app: backend
 spec:
@@ -15,15 +16,20 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: navjotrai/backend_image:latest
-        ports:
-        - containerPort: 5000
-        env:
-        - name: FLASK_ENV
-          value: "development"
-        - name: API_KEY
-          valueFrom:
-            secretKeyRef:
-              name: my-api-secret
-              key: API_KEY
+        - name: backend
+          image: navjotrai/backend_image:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: FLASK_ENV
+              value: "development"
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-key-secret
+                  key: API_KEY
+            - name: API_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: my-api-config
+                  key: API_ENDPOINT

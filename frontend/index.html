@@ -62,7 +62,7 @@
             e.preventDefault();
             const city = document.getElementById('city').value;
 
-            fetch(`http://backend-service.backend.svc.cluster.local/api/weather?city=${city}`)
+            fetch(`/api/weather?city=${city}`)
 
 
                 .then(response => {
