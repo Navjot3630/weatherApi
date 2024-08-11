@@ -1,5 +1,5 @@
 image:
-  repository: navjotrai/frontend_imagr
+  repository: navjotrai/frontend_image
   tag: latest
 
 service:

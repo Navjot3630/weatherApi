@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-    build:
-      context: ./frontend
+    image: navjotrai/frontend_image:latest
     ports:
       - "80:80"
     depends_on:
@@ -16,8 +15,7 @@ services:
         condition: on-failure
 
   backend:
-    build:
-      context: ./backend
+    image: navjotrai/backend_image:latest
     ports:
       - "5000:5000"
     environment:
@@ -31,4 +29,4 @@ services:
 
 networks:
   app_network:
-    driver: bridge
+    driver: overlay
