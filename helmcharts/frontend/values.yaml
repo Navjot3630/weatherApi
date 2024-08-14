@@ -9,13 +9,6 @@ service:
 spec:
   replicas: 3 
 
-ingress:
-  enabled: true
-  hosts:
-    - host: chatsapp.xyz
-      paths:
-        - path: /
-          pathType: Prefix
 
 nginx:
   configMapName: nginx-config
