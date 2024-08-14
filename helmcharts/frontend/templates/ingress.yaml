@@ -20,4 +20,12 @@ spec:
                 port:
                   number: 80
           {{- end }}
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 5000
+              namespace: backend
     {{- end }}

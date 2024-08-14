@@ -12,7 +12,7 @@ spec:
 ingress:
   enabled: true
   hosts:
-    - host: frontend.example.com
+    - host: chatsapp.xyz
       paths:
         - path: /
           pathType: Prefix
