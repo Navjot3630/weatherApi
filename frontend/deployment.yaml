@@ -26,4 +26,4 @@ spec:
     volumes:
         - name: nginx-config-volume
           configMap:
-            name: {{ .Values.nginx.configMapName }}
+            name: configmap.yaml
