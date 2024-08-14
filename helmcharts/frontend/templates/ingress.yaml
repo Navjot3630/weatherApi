@@ -8,12 +8,12 @@ metadata:
 spec:
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{ .host | default "frontend.example.com" }}
+    - host: {{ .host }}
       http:
         paths:
           {{- range .paths }}
-          - path: {{ .path | default "/" }}
-            pathType: {{ .pathType | default "Prefix" }}
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
             backend:
               service:
                 name: frontend-service
